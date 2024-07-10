@@ -1,0 +1,37 @@
+@startuml
+skinparam backgroundColor #EEEBDC
+
+skinparam sequence {
+    ArrowColor DarkGreen
+    LifeLineBorderColor blue
+    LifeLineBackgroundColor #A9DCDF
+}
+
+actor User
+participant Browser
+participant ReactApp
+participant ServiceWorker
+participant Cache
+participant Network
+
+User -> Browser : Request ReactApp
+Browser -> ReactApp : Serve index.html
+ReactApp -> ServiceWorker : Register Service Worker
+ServiceWorker -> Cache : Cache static assets
+ServiceWorker -> Network : Fetch new content if available
+Browser -> ServiceWorker : Fetch cached content
+ServiceWorker -> Browser : Serve content from cache
+Browser -> User : Display ReactApp
+
+note right of ServiceWorker : Service Worker registered and handles caching
+
+User -> Browser : Interact with App
+Browser -> ReactApp : Handle user interactions
+ReactApp -> ServiceWorker : Use cached assets
+ReactApp -> Network : Fetch dynamic content
+Network -> ReactApp : Serve new content
+ReactApp -> User : Display content
+
+note right of ReactApp : App works offline and updates in background
+
+@enduml

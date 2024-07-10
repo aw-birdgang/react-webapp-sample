@@ -1,0 +1,37 @@
+@startuml
+skinparam backgroundColor #EEEBDC
+
+skinparam sequence {
+    ArrowColor DarkGreen
+    LifeLineBorderColor blue
+    LifeLineBackgroundColor #A9DCDF
+}
+
+actor User
+participant Browser
+participant ReactApp
+participant ServiceWorker
+participant Server
+
+User -> Browser : Open PWA
+Browser -> ReactApp : Load App
+ReactApp -> ServiceWorker : Register Service Worker
+ServiceWorker -> ReactApp : Service Worker Registered
+
+ReactApp -> User : Request Notification Permission
+User -> ReactApp : Grant Permission
+ReactApp -> ServiceWorker : Subscribe to Push
+ServiceWorker -> Browser : Generate Push Subscription
+Browser -> ServiceWorker : Push Subscription Created
+ServiceWorker -> ReactApp : Push Subscription
+
+ReactApp -> Server : Send Push Subscription
+Server -> Server : Store Subscription
+
+Server -> ServiceWorker : Send Push Notification
+ServiceWorker -> Browser : Push Event Received
+Browser -> ServiceWorker : Show Notification
+
+ServiceWorker -> User : Display Push Notification
+
+@enduml
