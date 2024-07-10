@@ -1,4 +1,4 @@
-# PWA template 생성
+# PWA template generate
 ````
 npx create-react-app . --template cra-template-pwa-typescript
 
@@ -7,33 +7,33 @@ npx create-react-app . --template cra-template-pwa-typescript
 
 
 
-# PWA의 주요 특징
+# Key Features of PWA
 ````
-반응형: 모든 기기와 화면 크기에 맞게 자동으로 조정됨.
-오프라인 기능: 인터넷 연결이 없을 때도 작동하도록 캐시 기능 제공.
-푸시 알림: 사용자에게 푸시 알림을 보낼 수 있음.
-빠른 로딩: 첫 로딩 후 캐싱을 통해 빠른 로딩 속도 제공.
-앱 설치: 사용자가 PWA를 홈 화면에 설치할 수 있음.
-````
-
-
-
-# PWA의 구성 요소
-````
-Service Worker : 백그라운드에서 실행되며, 네트워크 요청을 가로채고 캐싱을 관리함. 오프라인 기능을 가능하게 함.
-Web App Manifest : 앱의 메타데이터(이름, 아이콘, 시작 URL 등)를 포함하여 앱 설치 및 실행 환경을 정의함.
-HTTPS : 보안상의 이유로 HTTPS 프로토콜을 사용해야 함.
+Responsive : Automatically adjusts to all devices and screen sizes.
+Offline Capability : Works even when there is no internet connection by providing caching functionality.
+Push Notifications : Can send push notifications to users.
+Fast Loading : Provides fast loading speed after the initial load through caching.
+App Installation : Users can install the PWA on their home screen.
 ````
 
 
 
-# PWA를 사용하는 이유
+# Components of PWA
 ````
-향상된 사용자 경험: PWA는 네이티브 앱처럼 동작하여 더 나은 사용자 경험을 제공함.
-오프라인 지원: 인터넷 연결이 없어도 작동 가능하여 사용자 접근성을 높임.
-빠른 로딩 시간: 캐시를 사용하여 빠른 로딩 속도를 제공함.
-푸시 알림: 사용자 참여를 높일 수 있는 푸시 알림 기능 제공.
-앱 설치: 사용자가 홈 화면에 앱을 설치할 수 있어 접근성을 높임.
-크로스 플랫폼: 한 번 개발하면 여러 플랫폼에서 사용할 수 있음.
-유지보수 용이: 웹 애플리케이션으로 유지보수가 용이함.
+Service Worker : Runs in the background, intercepts network requests, and manages caching, enabling offline functionality.
+Web App Manifest : Defines the app's metadata (name, icon, start URL, etc.) and the environment for app installation and execution.
+HTTPS : Uses the HTTPS protocol for security reasons.
+````
+
+
+
+# Reasons to Use PWA
+````
+Enhanced User Experience : PWAs behave like native apps, providing a better user experience.
+Offline Support : Works without an internet connection, increasing user accessibility.
+Fast Loading Time : Uses caching to provide fast loading speeds.
+Push Notifications : Offers push notification functionality to increase user engagement.
+App Installation : Allows users to install the app on their home screen, increasing accessibility.
+Cross-Platform : Can be developed once and used on multiple platforms.
+Easy Maintenance : As a web application, it is easy to maintain.
 ````
